@@ -7,7 +7,7 @@ const {
   dir: { publicDirectory },
 } = config;
 
-export class Service {
+class Service {
   createFileStream(filename) {
     return fs.createReadStream(filename);
   }
@@ -35,3 +35,5 @@ export class Service {
     };
   }
 }
+
+export { Service };
