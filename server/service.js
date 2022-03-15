@@ -1,6 +1,6 @@
 import fs from 'fs';
 import { join, extname } from 'path';
-import { config } from 'process';
+import  config  from './config.js';
 import fsPromises from 'fs/promises';
 
 const {
@@ -28,7 +28,7 @@ class Service {
     const {
       name,
       type
-    } = this.getFileInfo(file);
+    } = await this.getFileInfo(file);
     return {
       stream: this.createFileStream(name),
       type
