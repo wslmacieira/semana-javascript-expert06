@@ -59,6 +59,8 @@ function handleError(error, response) {
   }
 
   logger.error(`caught error on API ${error.stack}`);
+  response.writeHead(500);
+  return response.end();
 }
 
 export function handler(request, response) {
